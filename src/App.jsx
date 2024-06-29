@@ -135,7 +135,7 @@ export default function App() {
                 <span className="checkmark"></span>
               </label>
 
-              <label className="container">
+              <label className={`container ${state.type === 'interest' ? 'active-container' : ''}`}>
                 Interest Only
                 <input
                   type="radio"
