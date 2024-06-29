@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+  /* Colors */
+  --lime: #d8db2f;
+  --slate-900: #133041;
+  --slate-700: #4e6e7e;
+  --slate-500: #6b94a8;
+  --slate-300: #9abed5;
+  --slate-100: #e4f4fd;
+  --white: #fff;
+  --red: #d73328;
+
+  /* Spacings */
+  --space-100: 8px;
+  --space-150: 11.9px;
+  --space-200: 16px;
+  --space-300: 24px;
+  --space-400: 32px;
+  --space-500: 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background: red;
+}
+
+.main {
+  max-width: 1008px;
+  width: 100%;
+  /* padding: var(--space-400) var(--space-300); */
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  /* gap: 32px; */
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: var(--space-300);
+}
+
+.header h1 {
+  color: var(--slate-900);
+  line-height: 125%;
+}
+
+.header span {
+  color: var(--slate-700);
+  text-decoration: underline;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+.information__container {
+  padding: 32px 24px;
+}
+
+.icon__container {
+  position: absolute;
+  padding: var(--space-150) var(--space-200);
+  background-color: var(--slate-100);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--slate-700);
+}
+
+.active-icon {
+  background-color: var(--lime);
+}
+
+.active-border {
+  outline: 2px solid var(--lime);
+}
+
+.active-radio {
+  border: var(--lime);
+  background-color: rgba(216, 219, 47, 0.15);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
+}
+
+.input-big {
+  width: 100%;
+  font-size: 18px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid var(--slate-700);
+}
+
+.label {
+  font-size: 16px;
+  color: var(--slate-700);
+  font-weight: 500;
+}
+
+.padding-left {
+  padding: 12.9px 16px 12.9px 64px;
+}
+
+.padding-right {
+  padding: 12.9px 64px 12.9px 16px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-150);
+}
+
+.inputs-container-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.container {
+  position: relative;
+  padding: 12px 12px 12px 58px;
+
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+  outline: 1px solid var(--slate-900);
+  border-radius: 5px;
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+
+    & + .checkmark {
+      position: absolute;
+
+      top: 28%;
+      left: 16px;
+      height: 25px;
+      width: 25px;
+      background-color: transparent;
+      border-radius: 50%;
+      border: 1px solid black;
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: none;
+      }
+    }
+
+    &:checked + .checkmark {
+      background: rgba(216, 219, 47, 0.15);
+      border: 1px solid var(--lime);
+
+      &::after {
+        display: block;
+        background: var(--lime);
+      }
+    }
+  }
+
+  &:hover input + .checkmark {
+    background-color: trannsparent;
+  }
+
+  .checkmark::after {
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: white;
+  }
+}
+
+.container:hover,
+.container:active .container:focus {
+  border: none;
+  outline: 2px solid var(--lime);
+  background: rgba(216, 219, 47, 0.15);
+}
+
+.active-container {
+  border: none;
+  outline: 2px solid var(--lime);
+  background: rgba(216, 219, 47, 0.15);
+}
+
+.error-container {
+  background-color: var(--red);
+  color: white;
+}
+
+.error-border {
+  border: 1px solid var(--red);
+}
+
+.error {
+  color: var(--red);
+}
+
+.calculate {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: var(--space-150);
+  background-color: var(--lime);
+  border: none;
+  padding: 12.5px var(--space-500);
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--slate-900);
+}
+
+.display__container {
+  display: flex;
+  background-color: var(--slate-900);
+
+  flex-direction: column;
+
+  padding: var(--space-400) var(--space-300);
+}
+
+.informations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.informations img {
+  margin-bottom: 16px;
+}
+
+.info__title {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.info__paragraph {
+  color: var(--slate-300);
+  line-height: 150%;
+  font-weight: 500;
+}
+
+.calculations__container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.texts {
+  margin-bottom: 24px;
+}
+
+.card {
+  padding: var(--space-300) var(--space-200);
+  border-radius: var(--spacing-100, 8px);
+  border-top: 4px solid var(--color-lime, #d8db2f);
+  background: rgba(0, 0, 0, 0.25);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(154, 190, 213, 0.25);
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.monthly__amount {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--lime);
+}
+
+.total__amount {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 700;
+}
