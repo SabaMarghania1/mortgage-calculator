@@ -13,6 +13,8 @@ import DisplayContainer from './components/containerComponents/DisplayContainer'
 import DisplayInfo from './components/DisplayInfo';
 import Calculations from './components/Calculations';
 
+import calculatorIcon from './images/icon-calculator.svg';
+
 import {calculateRepayments} from './utils';
 
 export default function App() {
@@ -151,7 +153,7 @@ export default function App() {
           </InputContainer>
 
           <button type="submit" className="calculate">
-            <img src="/icon-calculator.svg" alt="calculate" />
+            <img src={calculatorIcon} alt="calculate" />
             Calculate Repayments
           </button>
         </CustomForm>
