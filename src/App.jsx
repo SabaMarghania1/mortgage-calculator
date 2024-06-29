@@ -151,7 +151,7 @@ export default function App() {
           </InputContainer>
 
           <button type="submit" className="calculate">
-            <img src="public/icon-calculator.svg" alt="calculate" />
+            <img src="/icon-calculator.svg" alt="calculate" />
             Calculate Repayments
           </button>
         </CustomForm>
